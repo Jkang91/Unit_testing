@@ -1,7 +1,16 @@
-const signUp = require("./userController")
+const mongoose = require('mongoose')
+const app = require("../../app")
+const request = require('supertest')
 
-describe("signs up user successfully", () => {
-    it('sign up', () => {
-        expect(true).toEqual(true)
+describe("Sign up process", () => {
+    it('tests /signup endpoint', async() => {
+        const response = await request(app).get("/auth/signup")
+        expect(response.statusCode).toBe(200)
     })
 }) 
+
+afterAll(() => {
+    mongoose.connection.close()
+})
+
+

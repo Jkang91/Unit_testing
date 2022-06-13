@@ -14,7 +14,7 @@ mongoose.connect(
         if(error) {
             return console.log(error)
         }
-        console.log("connected to database")
+        // console.log("connected to database")
     }
 )
 
