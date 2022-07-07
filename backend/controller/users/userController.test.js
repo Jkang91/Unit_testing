@@ -7,6 +7,9 @@ let chaiHttp = require('chai-http');
 
 chai.use(chaiHttp);
 
+beforeEach(() => {
+    jest.useFakeTimers()
+});
 
 
 describe("Sign up process", () => {
